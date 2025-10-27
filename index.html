@@ -64,7 +64,7 @@
 <div id="progress-container">
   <div id="progress-bar"></div>
 </div>
-<div id="progress-text">Progreso: $0 / $5 000 000</div>
+<div id="progress-text">Cargando progreso...</div>
 
 <div class="barrier">
   <span>$0</span><span>$100</span><span>$1 000</span><span>$10 000</span>
@@ -79,23 +79,28 @@
 <script>
 const GOAL = 5000000;
 
-// 🔧 Cambiá este valor para mostrar el monto actual recaudado:
-let current = 0; // ejemplo: 1.2 millones
+// Leer data.json dinámicamente
+fetch('data.json')
+  .then(res => res.json())
+  .then(data => {
+    const current = data.current;
+    const percent = (current / GOAL) * 100;
+    document.getElementById('progress-bar').style.width = percent + '%';
+    document.getElementById('progress-text').innerText =
+      `Progreso: $${current.toLocaleString()} / $${GOAL.toLocaleString()} (${percent.toFixed(2)}%)`;
 
-// Calcular porcentaje
-let percent = (current / GOAL) * 100;
-document.getElementById('progress-bar').style.width = percent + '%';
-document.getElementById('progress-text').innerText =
-  `Progreso: $${current.toLocaleString()} / $${GOAL.toLocaleString()} (${percent.toFixed(2)}%)`;
+    const barriers = document.querySelectorAll('.barrier span');
+    const barrierValues = [0,100,1000,10000,100000,1000000,2000000,3000000,4000000,5000000];
+    barriers.forEach((b,i)=>{
+      if(current >= barrierValues[i]) b.classList.add('reached');
+    });
+  })
+  .catch(err => {
+    document.getElementById('progress-text').innerText = "Error al cargar el progreso.";
+    console.error(err);
+  });
 
-// Marcar barreras alcanzadas
-const barriers = document.querySelectorAll('.barrier span');
-const barrierValues = [0,100,1000,10000,100000,1000000,2000000,3000000,4000000,5000000];
-barriers.forEach((b,i)=>{
-  if(current >= barrierValues[i]) b.classList.add('reached');
-});
-
-// ❄️ Generar nieve animada
+// ❄️ nieve animada
 for(let i=0;i<80;i++){
   let s = document.createElement('div');
   s.className='snowflake';
@@ -109,4 +114,6 @@ for(let i=0;i<80;i++){
 
 </body>
 </html>
+
+
 
