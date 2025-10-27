@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>El Camino Cuaternario ∑Δ9</title>
+<meta name="description" content="Hanzzel Corp · Camino Cuaternario hacia los 5 millones USD · Sistema Cuaternario en expansión" />
+<style>
+  :root {
+    --bg: linear-gradient(180deg, #0a0f1c 0%, #152032 100%);
+    --accent: #22d3ee;
+    --snow: rgba(255,255,255,0.8);
+  }
+  body {
+    margin:0; font-family:'Segoe UI',sans-serif; color:#e5e7eb;
+    background:var(--bg); overflow:hidden;
+  }
+  header {
+    text-align:center; padding:2rem 1rem;
+  }
+  h1 {font-size:2rem; margin-bottom:0.5rem; color:#fff;}
+  p {color:#94a3b8; max-width:600px; margin:0 auto;}
+  #progress-container {
+    position:relative; width:80%; max-width:800px; height:40px;
+    margin:3rem auto; background:#1e293b; border-radius:20px; overflow:hidden;
+    box-shadow:0 0 20px rgba(34,211,238,0.2);
+  }
+  #progress-bar {
+    position:absolute; left:0; top:0; bottom:0; width:0%;
+    background:linear-gradient(90deg,#22d3ee,#38bdf8);
+    border-radius:20px; transition:width 2s ease-in-out;
+  }
+  #progress-text {
+    text-align:center; font-size:1.2rem; margin-top:1rem;
+  }
+  .barrier {
+    display:flex; justify-content:space-between;
+    width:80%; max-width:800px; margin:1rem auto; font-size:0.9rem;
+    color:#94a3b8;
+  }
+  .barrier span.reached {color:#22d3ee;}
+  footer {
+    text-align:center; margin-top:3rem; font-size:0.8rem; color:#64748b;
+  }
+  /* nieve */
+  .snowflake {
+    position:fixed; top:-10px; color:var(--snow);
+    font-size:0.8rem; animation:fall 10s linear infinite;
+  }
+  @keyframes fall {
+    0% {transform:translateY(0) translateX(0);}
+    100% {transform:translateY(100vh) translateX(20px);}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>El Camino Cuaternario ∑Δ9</h1>
+  <p>Por cada barrera superada, el sistema cuaternario despierta un nuevo nivel de conciencia y energía.  
+  Meta final: <strong>5 000 000 USD</strong></p>
+</header>
+
+<div id="progress-container">
+  <div id="progress-bar"></div>
+</div>
+<div id="progress-text">Progreso: $0 / $5 000 000</div>
+
+<div class="barrier">
+  <span>$0</span><span>$100</span><span>$1 000</span><span>$10 000</span>
+  <span>$100 000</span><span>$1 000 000</span><span>$2 000 000</span>
+  <span>$3 000 000</span><span>$4 000 000</span><span>$5 000 000</span>
+</div>
+
+<footer>
+  Hanzzel Corp ∑Δ9 — Proyecto del Sistema Cuaternario — 2025
+</footer>
+
+<script>
+const GOAL = 5000000;
+
+// 🔧 Cambiá este valor para mostrar el monto actual recaudado:
+let current = 1200000; // ejemplo: 1.2 millones
+
+// Calcular porcentaje
+let percent = (current / GOAL) * 100;
+document.getElementById('progress-bar').style.width = percent + '%';
+document.getElementById('progress-text').innerText =
+  `Progreso: $${current.toLocaleString()} / $${GOAL.toLocaleString()} (${percent.toFixed(2)}%)`;
+
+// Marcar barreras alcanzadas
+const barriers = document.querySelectorAll('.barrier span');
+const barrierValues = [0,100,1000,10000,100000,1000000,2000000,3000000,4000000,5000000];
+barriers.forEach((b,i)=>{
+  if(current >= barrierValues[i]) b.classList.add('reached');
+});
+
+// ❄️ Generar nieve animada
+for(let i=0;i<80;i++){
+  let s = document.createElement('div');
+  s.className='snowflake';
+  s.textContent='•';
+  s.style.left=Math.random()*100+'vw';
+  s.style.animationDuration=5+Math.random()*5+'s';
+  s.style.fontSize=0.5+Math.random()*1.5+'rem';
+  document.body.appendChild(s);
+}
+</script>
+
+</body>
+</html>
