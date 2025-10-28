@@ -90,7 +90,7 @@ fetch('data.json')
       `Progreso: $${current.toLocaleString()} / $${GOAL.toLocaleString()} (${percent.toFixed(2)}%)`;
 
     const barriers = document.querySelectorAll('.barrier span');
-    const barrierValues = [0,100,1000,10000,100000,1000000,2000000,3000000,4000000,5000000];
+    const barrierValues = [0,10,100,1000,10000,100000,200000,300000,400000,500000];
     barriers.forEach((b,i)=>{
       if(current >= barrierValues[i]) b.classList.add('reached');
     });
@@ -114,6 +114,7 @@ for(let i=0;i<80;i++){
 
 </body>
 </html>
+
 
 
 
