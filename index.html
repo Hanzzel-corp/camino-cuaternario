@@ -1,121 +1,42 @@
 <!doctype html>
-<html lang="es">
-<head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>El Camino Cuaternario ∑Δ9</title>
-<meta name="description" content="Hanzzel Corp · Iniciativa independiente de recaudación de fondos Camino Cuaternario" />
+<html lang="es"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Camino Cuaternario | Iniciativa de recaudación · Hanzzel Corp</title>
+<meta name="description" content="Camino Cuaternario es una iniciativa independiente de recaudación de fondos de Hanzzel Corp. Meta: 500.000 USD.">
+<meta name="robots" content="index,follow"><link rel="canonical" href="https://hanzzel-corp.github.io/camino-cuaternario/">
+<meta property="og:type" content="website"><meta property="og:title" content="Camino Cuaternario | Hanzzel Corp">
+<meta property="og:description" content="Iniciativa independiente de recaudación de fondos. Meta: 500.000 USD.">
+<meta property="og:url" content="https://hanzzel-corp.github.io/camino-cuaternario/">
 <style>
-  :root {
-    --bg: linear-gradient(180deg, #0a0f1c 0%, #152032 100%);
-    --accent: #22d3ee;
-    --snow: rgba(255,255,255,0.8);
-  }
-  body {
-    margin:0; font-family:'Segoe UI',sans-serif; color:#e5e7eb;
-    background:var(--bg); overflow-x:hidden;
-  }
-  header {
-    text-align:center; padding:2rem 1rem;
-  }
-  h1 {font-size:2rem; margin-bottom:0.5rem; color:#fff;}
-  p {color:#94a3b8; max-width:600px; margin:0 auto;}
-  #progress-container {
-    position:relative; width:80%; max-width:800px; height:40px;
-    margin:3rem auto; background:#1e293b; border-radius:20px; overflow:hidden;
-    box-shadow:0 0 20px rgba(34,211,238,0.2);
-  }
-  #progress-bar {
-    position:absolute; left:0; top:0; bottom:0; width:0%;
-    background:linear-gradient(90deg,#22d3ee,#38bdf8);
-    border-radius:20px; transition:width 2s ease-in-out;
-  }
-  #progress-text {
-    text-align:center; font-size:1.2rem; margin-top:1rem;
-  }
-  .barrier {
-    display:flex; justify-content:space-between;
-    width:80%; max-width:800px; margin:1rem auto; font-size:0.9rem;
-    color:#94a3b8;
-  }
-  .barrier span.reached {color:#22d3ee;}
-  footer {
-    text-align:center; margin-top:3rem; font-size:0.8rem; color:#64748b;
-  }
-  /* nieve */
-  .snowflake {
-    position:fixed; top:-10px; color:var(--snow);
-    font-size:0.8rem; animation:fall 10s linear infinite;
-  }
-  @keyframes fall {
-    0% {transform:translateY(0) translateX(0);}
-    100% {transform:translateY(100vh) translateX(20px);}
-  }
-</style>
-</head>
-<body>
-
-<header>
-  <h1>El Camino Cuaternario ∑Δ9</h1>
-  <p>Iniciativa independiente de recaudación de fondos de Hanzzel Corp. Meta publicada: <strong>500 000 USD</strong></p>
-</header>
-
-<div id="progress-container">
-  <div id="progress-bar"></div>
-</div>
-<div id="progress-text">Cargando progreso...</div>
-
-<div class="barrier">
-  <span>$0</span><span>$10</span><span>$100</span><span>$1 000</span>
-  <span>$10 000</span><span>$100 000</span><span>$200 000</span>
-  <span>$300 000</span><span>$400 000</span><span>$500 000</span>
-</div>
-
-<footer>
-  Hanzzel Corp ∑Δ9 — Iniciativa de recaudación de fondos — 2025
-</footer>
-
+:root{color-scheme:dark;--bg:#0a0f1c;--panel:#111c30;--line:#26364d;--accent:#22d3ee;--muted:#a8b5c8}
+*{box-sizing:border-box}body{margin:0;min-height:100vh;font:16px/1.6 system-ui,-apple-system,Segoe UI,sans-serif;color:#e8eef8;background:radial-gradient(ellipse at 50% 0%,#162944 0%,var(--bg) 58%);padding:24px}
+main{max-width:920px;margin:auto}nav{display:flex;gap:16px;flex-wrap:wrap;border-bottom:1px solid var(--line);padding:8px 0 18px}a{color:var(--accent)}
+.hero{text-align:center;padding:64px 16px 34px}.eyebrow{color:var(--accent);font-size:.82rem;letter-spacing:.14em;text-transform:uppercase}
+h1{font-size:clamp(2.2rem,6vw,4rem);line-height:1.08;margin:12px 0}.lead{max-width:680px;margin:16px auto;color:var(--muted);font-size:1.1rem}
+.panel{background:#111c30dd;border:1px solid var(--line);border-radius:18px;padding:24px;margin:20px 0}.goal{text-align:center;font-size:clamp(2rem,7vw,3.5rem);font-weight:800;letter-spacing:-.04em;margin:4px 0}
+.label{text-align:center;color:var(--muted)}.track{height:18px;border-radius:99px;background:#26364d;overflow:hidden;margin:22px 0 12px}
+#progress-bar{height:100%;width:0;background:linear-gradient(90deg,#22d3ee,#60a5fa);border-radius:99px;transition:width .7s ease}
+#progress-text{text-align:center;font-weight:650}#progress-note{text-align:center;color:var(--muted);font-size:.9rem;margin-top:8px}
+.milestones{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:8px;margin-top:22px}.milestones span{padding:9px;text-align:center;border:1px solid var(--line);border-radius:9px;color:var(--muted);font-size:.88rem}
+.milestones span.reached{border-color:var(--accent);color:#e8eef8;background:#22d3ee12}.note{color:var(--muted);font-size:.92rem}
+footer{border-top:1px solid var(--line);margin-top:42px;padding:22px 0;color:var(--muted);font-size:.88rem;text-align:center}
+@media(max-width:520px){body{padding:16px}.hero{padding:44px 4px 24px}.panel{padding:18px}}
+</style></head><body><main>
+<nav aria-label="Navegación principal"><a href="https://hanzzel-corp.github.io/">Portfolio Hanzzel Corp</a><a href="https://hanzzel-corp.github.io/hanzzel-store/">Store</a><a href="https://github.com/Hanzzel-corp">GitHub</a></nav>
+<header class="hero"><div class="eyebrow">Hanzzel Corp · Iniciativa independiente</div><h1>Camino Cuaternario</h1>
+<p class="lead">Una iniciativa independiente de recaudación de fondos. Esta página permite consultar la meta establecida y el progreso informado.</p></header>
+<section class="panel" aria-labelledby="goal-title"><div class="label" id="goal-title">Meta de recaudación</div><div class="goal">500.000 USD</div>
+<div class="track" role="progressbar" aria-label="Progreso de recaudación" aria-valuemin="0" aria-valuemax="500000" aria-valuenow="0" id="progress-track"><div id="progress-bar"></div></div>
+<div id="progress-text" aria-live="polite">Cargando progreso…</div><div id="progress-note">El progreso se obtiene del archivo público de datos.</div>
+<div class="milestones" aria-label="Hitos de recaudación"><span>$0</span><span>$10</span><span>$100</span><span>$1.000</span><span>$10.000</span><span>$100.000</span><span>$200.000</span><span>$300.000</span><span>$400.000</span><span>$500.000</span></div></section>
+<p class="note">Camino Cuaternario se presenta aquí exclusivamente como iniciativa de recaudación. Esta página no lo clasifica como investigación, software ni producto comercial.</p>
+<footer>Hanzzel Corp · Camino Cuaternario · Meta publicada: 500.000 USD</footer></main>
 <script>
-const GOAL = 500000;
-
-// Leer data.json dinámicamente
-fetch('https://hanzzel-corp.github.io/camino-cuaternario/data.json')
-  .then(res => res.json())
-  .then(data => {
-    const current = data.current;
-    const percent = (current / GOAL) * 100;
-    document.getElementById('progress-bar').style.width = percent + '%';
-    document.getElementById('progress-text').innerText =
-      `Progreso: $${current.toLocaleString()} / $${GOAL.toLocaleString()} (${percent.toFixed(2)}%)`;
-
-    const barriers = document.querySelectorAll('.barrier span');
-    const barrierValues = [0,10,100,1000,10000,100000,200000,300000,400000,500000];
-    barriers.forEach((b,i)=>{
-      if(current >= barrierValues[i]) b.classList.add('reached');
-    });
-  })
-  .catch(err => {
-    document.getElementById('progress-text').innerText = "Error al cargar el progreso.";
-    console.error(err);
-  });
-
-// ❄️ nieve animada
-for(let i=0;i<80;i++){
-  let s = document.createElement('div');
-  s.className='snowflake';
-  s.textContent='•';
-  s.style.left=Math.random()*100+'vw';
-  s.style.animationDuration=5+Math.random()*5+'s';
-  s.style.fontSize=0.5+Math.random()*1.5+'rem';
-  document.body.appendChild(s);
-}
-</script>
-
-</body>
-</html>
-
-
-
-
-
-
+const GOAL=500000,progressText=document.getElementById('progress-text'),progressBar=document.getElementById('progress-bar'),progressTrack=document.getElementById('progress-track');
+fetch('./data.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('data.json unavailable');return r.json()}).then(data=>{
+const raw=Number(data.current);if(!Number.isFinite(raw)||raw<0)throw Error('Invalid progress value');const current=Math.min(raw,GOAL),percent=current/GOAL*100;
+progressBar.style.width=percent+'%';progressTrack.setAttribute('aria-valuenow',String(current));
+progressText.textContent='Progreso informado: '+new Intl.NumberFormat('es-AR',{maximumFractionDigits:2}).format(current)+' USD / 500.000 USD ('+percent.toFixed(2)+'%)';
+const values=[0,10,100,1000,10000,100000,200000,300000,400000,500000];document.querySelectorAll('.milestones span').forEach((n,i)=>{if(current>=values[i])n.classList.add('reached')});
+}).catch(e=>{progressText.textContent='No se pudo cargar el progreso en este momento.';document.getElementById('progress-note').textContent='La meta oficial continúa siendo 500.000 USD. El dato de progreso no está disponible.';console.error(e)});
+</script></body></html>
