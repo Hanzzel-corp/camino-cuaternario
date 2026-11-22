@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Camino Cuaternario | Independent Fundraising Initiative · Hanzzel Corp</title>
+<meta name="description" content="Camino Cuaternario is an independent fundraising initiative by Hanzzel Corp. Goal: USD 500,000.">
+<meta name="robots" content="index,follow"><link rel="canonical" href="https://hanzzel-corp.github.io/camino-cuaternario/en/">
+<link rel="alternate" hreflang="es" href="https://hanzzel-corp.github.io/camino-cuaternario/"><link rel="alternate" hreflang="en" href="https://hanzzel-corp.github.io/camino-cuaternario/en/"><link rel="alternate" hreflang="x-default" href="https://hanzzel-corp.github.io/camino-cuaternario/">
+<meta property="og:type" content="website"><meta property="og:title" content="Camino Cuaternario | Hanzzel Corp">
+<meta property="og:description" content="Camino Cuaternario: independent fundraising initiative with a USD 500,000 goal; progress reported from public data.">
+<meta name="twitter:card" content="summary">
+<meta property="og:url" content="https://hanzzel-corp.github.io/camino-cuaternario/">
+<style>
+:root{color-scheme:dark;--bg:#0a0f1c;--panel:#111c30;--line:#26364d;--accent:#22d3ee;--muted:#a8b5c8}
+*{box-sizing:border-box}body{margin:0;min-height:100vh;font:16px/1.6 system-ui,-apple-system,Segoe UI,sans-serif;color:#e8eef8;background:radial-gradient(ellipse at 50% 0%,#162944 0%,var(--bg) 58%);padding:24px}
+main{position:relative;z-index:1;max-width:920px;margin:auto}nav{display:flex;gap:16px;flex-wrap:wrap;border-bottom:1px solid var(--line);padding:8px 0 18px}a{color:var(--accent)}
+.hero{text-align:center;padding:64px 16px 34px}.eyebrow{color:var(--accent);font-size:.82rem;letter-spacing:.14em;text-transform:uppercase}
+h1{font-size:clamp(2.2rem,6vw,4rem);line-height:1.08;margin:12px 0}.lead{max-width:680px;margin:16px auto;color:var(--muted);font-size:1.1rem}
+.panel{background:#111c30dd;border:1px solid var(--line);border-radius:18px;padding:24px;margin:20px 0}.goal{text-align:center;font-size:clamp(2rem,7vw,3.5rem);font-weight:800;letter-spacing:-.04em;margin:4px 0}
+.label{text-align:center;color:var(--muted)}.track{height:18px;border-radius:99px;background:#26364d;overflow:hidden;margin:22px 0 12px}
+#progress-bar{height:100%;width:0;background:linear-gradient(90deg,#22d3ee,#60a5fa);border-radius:99px;transition:width .7s ease}
+#progress-text{text-align:center;font-weight:650}#progress-note{text-align:center;color:var(--muted);font-size:.9rem;margin-top:8px}
+.milestones{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:8px;margin-top:22px}.milestones span{padding:9px;text-align:center;border:1px solid var(--line);border-radius:9px;color:var(--muted);font-size:.88rem}
+.milestones span.reached{border-color:var(--accent);color:#e8eef8;background:#22d3ee12}.note{color:var(--muted);font-size:.92rem}
+footer{border-top:1px solid var(--line);margin-top:42px;padding:22px 0;color:var(--muted);font-size:.88rem;text-align:center}
+@media(max-width:520px){body{padding:16px}.hero{padding:44px 4px 24px}.panel{padding:18px}}
+
+.snow-layer{position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:5}
+.snowflake{position:absolute;top:-24px;color:#eaf7ff;text-shadow:0 0 8px #bdeeff;font-size:var(--size,12px);opacity:var(--opacity,.75);animation:snow-fall var(--duration,10s) linear var(--delay,0s) infinite}
+@keyframes snow-fall{from{transform:translate3d(0,-5vh,0) rotate(0)}to{transform:translate3d(var(--drift,30px),110vh,0) rotate(360deg)}}
+.snowbank{position:fixed;bottom:0;left:0;width:100%;height:0;pointer-events:none;z-index:0;background:linear-gradient(180deg,#eaf7ff 0%,#ccecff 65%,#a9d8f4 100%);border-radius:50% 50% 0 0/18px 18px 0 0;box-shadow:0 -8px 30px #bdeeff22;transition:height 1.2s ease}
+.snowbank:before,.snowbank:after{content:"";position:absolute;bottom:70%;width:42vw;height:24px;border-radius:50%;background:#effaff;filter:blur(3px)}
+.snowbank:before{left:-5vw}.snowbank:after{right:-5vw}
+@media(prefers-reduced-motion:reduce){.snowflake{animation:none;display:none}#progress-bar,.snowbank{transition:none}}
+</style></head><body><main>
+<div class="snow-layer" id="snow-layer" aria-hidden="true"></div><div class="snowbank" id="snowbank" aria-hidden="true"></div>
+<nav aria-label="Main navigation"><a href="https://hanzzel-corp.github.io/">Portfolio Hanzzel Corp</a><a href="https://hanzzel-corp.github.io/hanzzel-store/">Store</a><a href="/camino-cuaternario/" lang="es" hreflang="es" aria-label="Cambiar a español">ES</a><a href="https://github.com/Hanzzel-corp">GitHub</a></nav>
+<header class="hero"><div class="eyebrow">Hanzzel Corp · Independent initiative</div><h1>Camino Cuaternario</h1>
+<p class="lead">An independent fundraising initiative. This page presents its stated funding target and the progress reported in public data.</p></header>
+<section class="panel" aria-labelledby="goal-title"><div class="label" id="goal-title">Fundraising goal</div><div class="goal">500.000 USD</div>
+<div class="track" role="progressbar" aria-label="Fundraising progress" aria-valuemin="0" aria-valuemax="500000" aria-valuenow="0" id="progress-track"><div id="progress-bar"></div></div>
+<div id="progress-text" aria-live="polite">Loading progress…</div><div id="progress-note">Progress is loaded from the public data file.</div>
+<div class="milestones" aria-label="Fundraising milestones"><span>$0</span><span>$10</span><span>$100</span><span>$1.000</span><span>$10.000</span><span>$100.000</span><span>$200.000</span><span>$300.000</span><span>$400.000</span><span>$500.000</span></div></section>
+<p class="note">Camino Cuaternario is presented exclusively as a fundraising initiative. This page does not classify it as research, software, or a commercial product.</p>
+<p class="note">Planned donation platform: Patreon. The official creator-page URL has not yet been confirmed, so no generic link is published that might direct donations to the wrong account.</p>
+<footer>Hanzzel Corp · Camino Cuaternario · Published goal: USD 500,000</footer></main>
+<script>
+const GOAL=500000,progressText=document.getElementById('progress-text'),progressBar=document.getElementById('progress-bar'),progressTrack=document.getElementById('progress-track'),snowLayer=document.getElementById('snow-layer'),snowbank=document.getElementById('snowbank');
+function renderSnow(percent){
+  const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const count=reduced?0:Math.min(80,12+Math.round(percent*0.68));
+  snowLayer.replaceChildren();
+  for(let i=0;i<count;i++){
+    const flake=document.createElement('span');flake.className='snowflake';flake.textContent=['❄','✦','❅'][i%3];
+    flake.style.left=(Math.random()*100)+'%';flake.style.setProperty('--size',(8+Math.random()*15)+'px');
+    flake.style.setProperty('--duration',(7+Math.random()*9)+'s');flake.style.setProperty('--delay',(-Math.random()*15)+'s');
+    flake.style.setProperty('--drift',((Math.random()-.5)*90)+'px');flake.style.setProperty('--opacity',(0.35+Math.random()*.6).toFixed(2));snowLayer.appendChild(flake);
+  }
+  snowbank.style.height=Math.min(180,percent*1.8)+'px';
+}
+fetch('../data.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('data.json unavailable');return r.json()}).then(data=>{
+const raw=Number(data.current);if(!Number.isFinite(raw)||raw<0)throw Error('Invalid progress value');const current=Math.min(raw,GOAL),percent=current/GOAL*100;
+progressBar.style.width=percent+'%';progressTrack.setAttribute('aria-valuenow',String(current));
+progressText.textContent='Reported progress: '+new Intl.NumberFormat('en-US',{maximumFractionDigits:2}).format(current)+' USD / 500.000 USD ('+percent.toFixed(2)+'%)';
+const values=[0,10,100,1000,10000,100000,200000,300000,400000,500000];document.querySelectorAll('.milestones span').forEach((n,i)=>{if(current>=values[i])n.classList.add('reached')});
+renderSnow(percent);
+}).catch(e=>{progressText.textContent='Progress is temporarily unavailable.';document.getElementById('progress-note').textContent='The official goal remains USD 500,000. The current progress figure is unavailable.';console.error(e)});
+</script></body></html>
